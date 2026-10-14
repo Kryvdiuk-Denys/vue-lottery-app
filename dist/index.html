@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="uk">
   <head>
     <meta charset="UTF-8">
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
-    <script type="module" crossorigin src="/assets/index-DVcSlMu9.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-UkcUJ0cB.css">
+    <title>Vue Lottery App</title>
+    <script type="module" crossorigin src="/assets/index-VW3tkL-l.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/runtime-core.esm-bundler-CG76aA6u.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-Ctvfjdnl.css">
   </head>
   <body>
     <div id="app"></div>
+    <script>
+      const requestedPath = new URLSearchParams(window.location.search).get('p')
+      if (requestedPath && requestedPath.startsWith('/vue-lottery-app/')) {
+        window.history.replaceState(null, '', requestedPath)
+      }
+    </script>
   </body>
 </html>

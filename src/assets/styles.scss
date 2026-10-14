@@ -1,4 +1,20 @@
-@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/type';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/forms';
+@import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/transitions';
+@import 'bootstrap/scss/close';
+@import 'bootstrap/scss/modal';
+@import 'bootstrap/scss/helpers';
+@import 'bootstrap/scss/utilities/api';
 
 body {
   margin: 0;
@@ -10,6 +26,165 @@ body {
 
 #app {
   min-height: 100vh;
+}
+
+a {
+  transition: color 0.2s ease;
+}
+
+.content-page {
+  min-height: calc(100vh - 72px);
+  padding: 36px 20px 60px;
+}
+
+.content-container {
+  width: min(100%, 1060px);
+  margin: 0 auto;
+}
+
+.content-card {
+  width: min(100%, 900px);
+  margin: 0 auto;
+  border: 1px solid #e5edef;
+  border-radius: 12px;
+  background: #fff;
+  padding: 24px;
+  box-shadow: 0 12px 40px #23424c08;
+}
+
+.author-card {
+  width: min(100%, 760px);
+  padding: clamp(24px, 5vw, 48px);
+}
+
+.author-card h1,
+.not-found-card h1 {
+  margin: 0 0 10px;
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 700;
+}
+
+.author-card .lead {
+  color: #6e7b83;
+  line-height: 1.6;
+}
+
+.author-card h2 {
+  margin: 30px 0 10px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 20px;
+  margin: 0 0 26px;
+  padding-left: 20px;
+  color: #53636b;
+  font-size: 14px;
+}
+
+.author-card .text-link,
+.home-intro .text-link {
+  color: #087f91;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.not-found-card {
+  max-width: 560px;
+  text-align: center;
+}
+
+.not-found-card > p:not(.eyebrow) {
+  margin: 0 0 20px;
+  color: #718087;
+}
+
+.eyebrow {
+  color: #0aafc8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.button-link {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  background: #0aafc8;
+  padding: 8px 14px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button-link:hover {
+  background: #078fa4;
+  color: #fff;
+}
+
+.users-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto 18px;
+}
+
+.users-heading .eyebrow {
+  margin: 0 0 6px;
+}
+
+.users-heading h1 {
+  margin: 0 0 4px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.users-heading p:not(.eyebrow) {
+  margin: 0;
+  color: #718087;
+  font-size: 13px;
+}
+
+.profile-card {
+  max-width: 780px;
+}
+
+.back-link {
+  color: #168698;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.profile-card .error-message {
+  color: #b52e2e;
+}
+
+@media (max-width: 600px) {
+  .content-page {
+    padding: 22px 12px 40px;
+  }
+
+  .content-card {
+    padding: 18px;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 .btn {
