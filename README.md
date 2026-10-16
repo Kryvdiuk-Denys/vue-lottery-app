@@ -1,6 +1,6 @@
 # Vue Lottery App
 
-Лабораторна робота №5: SPA на Vue 3 з маршрутизацією, JWT-авторизацією та керуванням користувачами DummyJSON.
+Лабораторна робота №6: SPA на Vue 3, організована за Feature-Sliced Design (FSD), із маршрутизацією, JWT-авторизацією та керуванням користувачами DummyJSON.
 
 ## Функціональність
 
@@ -10,6 +10,10 @@
 - Керування користувачами DummyJSON через сервіс-репозиторій, Pinia та спільний HTTP-клієнт.
 - Пошук і пагінація з відображенням стану в URL, перегляд профілю, створення, редагування й видалення.
 - Перевірка форм через VeeValidate і Yup.
+- Pinia stores для сесії, користувачів і теми; тема зберігається через `pinia-plugin-persistedstate`.
+- PrimeVue-компоненти із власними обгортками, сповіщення Toast і підтвердження дій.
+- Перемикач світлої/темної теми.
+- FSD-залежності перевіряються ESLint правилом `boundaries/dependencies`.
 
 ## Запуск
 
@@ -26,8 +30,33 @@ npm run dev
 
 ```sh
 npm run lint
+npm run lint:fsd
+npm run type-check
 npm run build
 ```
+
+## Структура FSD
+
+```mermaid
+flowchart TB
+  app --> pages
+  app --> widgets
+  app --> features
+  app --> entities
+  app --> shared
+  pages --> widgets
+  pages --> features
+  pages --> entities
+  pages --> shared
+  widgets --> features
+  widgets --> entities
+  widgets --> shared
+  features --> entities
+  features --> shared
+  entities --> shared
+```
+
+Стрілки показують напрямок залежності: кожен вищий шар може використовувати лише нижчі, а `shared` не залежить від бізнес-шарів.
 
 ## GitHub Pages
 
