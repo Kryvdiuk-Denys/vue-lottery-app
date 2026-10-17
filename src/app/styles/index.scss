@@ -1,0 +1,380 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/type';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/forms';
+@import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/transitions';
+@import 'bootstrap/scss/close';
+@import 'bootstrap/scss/modal';
+@import 'bootstrap/scss/helpers';
+@import 'bootstrap/scss/utilities/api';
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f4f4;
+  color: #30383a;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+a {
+  transition: color 0.2s ease;
+}
+
+.content-page {
+  min-height: calc(100vh - 72px);
+  padding: 36px 20px 60px;
+}
+
+.content-container {
+  width: min(100%, 1060px);
+  margin: 0 auto;
+}
+
+.content-card {
+  width: min(100%, 900px);
+  margin: 0 auto;
+  border: 1px solid #e5edef;
+  border-radius: 12px;
+  background: #fff;
+  padding: 24px;
+  box-shadow: 0 12px 40px #23424c08;
+}
+
+.author-card {
+  width: min(100%, 760px);
+  padding: clamp(24px, 5vw, 48px);
+}
+
+.author-card h1,
+.not-found-card h1 {
+  margin: 0 0 10px;
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 700;
+}
+
+.author-card .lead {
+  color: #6e7b83;
+  line-height: 1.6;
+}
+
+.author-card h2 {
+  margin: 30px 0 10px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 20px;
+  margin: 0 0 26px;
+  padding-left: 20px;
+  color: #53636b;
+  font-size: 14px;
+}
+
+.author-card .text-link,
+.home-intro .text-link {
+  color: #087f91;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.not-found-card {
+  max-width: 560px;
+  text-align: center;
+}
+
+.not-found-card > p:not(.eyebrow) {
+  margin: 0 0 20px;
+  color: #718087;
+}
+
+.eyebrow {
+  color: #0aafc8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.button-link {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  background: #0aafc8;
+  padding: 8px 14px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button-link:hover {
+  background: #078fa4;
+  color: #fff;
+}
+
+.users-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto 18px;
+}
+
+.users-heading .eyebrow {
+  margin: 0 0 6px;
+}
+
+.users-heading h1 {
+  margin: 0 0 4px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.users-heading p:not(.eyebrow) {
+  margin: 0;
+  color: #718087;
+  font-size: 13px;
+}
+
+.profile-card {
+  max-width: 780px;
+}
+
+.back-link {
+  color: #168698;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.profile-card .error-message {
+  color: #b52e2e;
+}
+
+@media (max-width: 600px) {
+  .content-page {
+    padding: 22px 12px 40px;
+  }
+
+  .content-card {
+    padding: 18px;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.btn {
+  min-height: 26px;
+  border-radius: 2px;
+  padding: 4px 13px;
+  font-size: 12px;
+  line-height: 1.3;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  border-color: #0aafc8;
+  background: #0aafc8;
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  border-color: #079db4;
+  background: #079db4;
+  color: #fff;
+}
+
+.btn-primary:disabled {
+  border-color: #9bd8e1;
+  background: #9bd8e1;
+  color: #fff;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 3px;
+  color: #30383a;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.form-control {
+  min-height: 26px;
+  border: 1px solid #e9e9e9;
+  border-radius: 2px;
+  background-color: #fafafa;
+  padding: 4px 9px;
+  color: #444;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.form-control:focus {
+  border-color: #0aafc8;
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(10, 175, 200, 0.12);
+}
+
+.form-control.is-invalid {
+  border-color: #e67777;
+  background-image: none;
+}
+
+.invalid-feedback {
+  margin-top: 3px;
+  color: #db6868;
+  font-size: 10px;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.table > :not(caption) > * > * {
+  padding: 7px 8px;
+  border-bottom-color: #ededed;
+}
+
+.table > thead {
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.table > thead > tr > th {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+:root.app-dark {
+  color-scheme: dark;
+  --app-background: #111a1f;
+  --app-surface: #1b292f;
+  --app-raised-surface: #22343b;
+  --app-text: #e4edf0;
+  --app-muted: #a0afb5;
+  --app-border: #394b52;
+}
+
+:root.app-dark body,
+:root.app-dark .lottery-app {
+  background: var(--app-background);
+  color: var(--app-text);
+}
+
+:root.app-dark .app-header {
+  border-color: var(--app-border);
+  background: rgb(27 41 47 / 95%);
+}
+
+:root.app-dark .brand-logo {
+  color: var(--app-text);
+}
+
+:root.app-dark .main-navigation a:not(.router-link-active) {
+  color: var(--app-muted);
+}
+
+:root.app-dark .main-navigation a:hover {
+  background: var(--app-raised-surface);
+  color: #75d8e7;
+}
+
+:root.app-dark .main-navigation a.router-link-active {
+  background: #14434b;
+  color: #82e2ec;
+}
+
+:root.app-dark .content-card,
+:root.app-dark .login-card,
+:root.app-dark .home-intro,
+:root.app-dark .lottery-card,
+:root.app-dark .winners-input,
+:root.app-dark .create-panel {
+  border-color: var(--app-border);
+  background: var(--app-surface);
+  color: var(--app-text);
+}
+
+:root.app-dark .create-panel,
+:root.app-dark .detail-grid > div {
+  background-color: var(--app-raised-surface);
+}
+
+:root.app-dark .home-intro p:not(.eyebrow),
+:root.app-dark .author-card .lead,
+:root.app-dark .users-heading p:not(.eyebrow),
+:root.app-dark .pagination,
+:root.app-dark .login-description,
+:root.app-dark .test-account,
+:root.app-dark .registration-heading p,
+:root.app-dark .profile-heading p:not(.eyebrow),
+:root.app-dark .status-message,
+:root.app-dark .winner-count {
+  color: var(--app-muted);
+}
+
+:root.app-dark .content-card h1,
+:root.app-dark .content-card h2,
+:root.app-dark .login-card h1,
+:root.app-dark .home-intro h1,
+:root.app-dark .registration-heading h2,
+:root.app-dark .profile-card,
+:root.app-dark .user-name {
+  color: var(--app-text);
+}
+
+:root.app-dark .detail-grid dd {
+  color: var(--app-text);
+}
+
+:root.app-dark .detail-grid > div {
+  border-color: var(--app-border);
+}
+
+:root.app-dark input,
+:root.app-dark textarea,
+:root.app-dark select,
+:root.app-dark .p-inputtext {
+  border-color: var(--app-border);
+  background-color: var(--app-raised-surface);
+  color: var(--app-text);
+}
+
+:root.app-dark .table {
+  --bs-table-color: var(--app-text);
+  --bs-table-bg: transparent;
+  --bs-table-border-color: var(--app-border);
+  --bs-table-hover-color: var(--app-text);
+}
+
+:root.app-dark .error-message {
+  background-color: #482b30;
+  color: #ffb4b4;
+}
